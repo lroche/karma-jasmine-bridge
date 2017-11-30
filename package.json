@@ -1,0 +1,26 @@
+{
+  "name": "karma-jasmine-bridge",
+  "version": "0.1.0",
+  "description": "A bridge between Jasmine 1 to Jasmine 2 for Karma Env",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lroche/karma-jasmine-bridge"
+  },
+  "keywords": [
+    "Karma",
+    "Jasmine",
+    "Bridge",
+    "runs",
+    "waitsFor"
+  ],
+  "author": "Lionel Roche",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lroche/karma-jasmine-bridge/issues"
+  },
+  "homepage": "https://github.com/lroche/karma-jasmine-bridge"
+}
