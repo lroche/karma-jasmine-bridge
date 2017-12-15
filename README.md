@@ -9,7 +9,7 @@ environment.
 List of API supported:
 - runs
 - waitsFor
-- waits (not in this version)
+- waits
 
 Why ?
 -----
