@@ -4,7 +4,8 @@
   "description": "A bridge between Jasmine 1 to Jasmine 2 for Karma Env",
   "main": "lib/index.js",
   "scripts": {
-    "test": "karma"
+    "test": "karma start --single-run",
+    "testdev": "karma start --single-run=false"
   },
   "repository": {
     "type": "git",
@@ -24,7 +25,14 @@
   },
   "homepage": "https://github.com/lroche/karma-jasmine-bridge",
   "devDependencies": {
+    "dojo": "^1.11.0",
     "eslint": "^4.13.1",
-    "eslint-config-strongloop": "^2.1.0"
+    "eslint-config-strongloop": "^2.1.0",
+    "jasmine-core": "^2.8.0",
+    "karma": "^1.7.1",
+    "karma-chrome-launcher": "^2.2.0",
+    "karma-dojo": "github:lroche/karma-dojo",
+    "karma-firefox-launcher": "^1.1.0",
+    "karma-jasmine": "^1.1.0"
   }
 }
