@@ -44,7 +44,7 @@ module.exports = function(config){
             ],
             // test results reporter to use
             // possible values: 'dots', 'progress', 'junit'
-            reporters: ['progress'],
+            reporters: ['dots', 'BrowserStack'],
     
             //junit reporter configuration
             junitReporter: 'junit',
@@ -65,6 +65,54 @@ module.exports = function(config){
             // enable / disable watching file and executing tests whenever any file changes
             autoWatch: true,
     
+            // global config of your BrowserStack account
+            browserStack: {
+                username: 'lionelroche1',
+                accessKey: 'uDQVs29BdwqdqcssF7ec'
+            },
+        
+            // define browsers
+            customLaunchers: {
+                'BS_Chrome': {
+                    base: 'BrowserStack',
+                    browser: 'chrome',
+                    os: 'OS X',
+                    os_version: 'Sierra'
+                },
+                'BS_Safari': {
+                    base: 'BrowserStack',
+                    browser: 'safari',
+                    os: 'OS X',
+                    os_version: 'Sierra'
+                },
+                'BS_Firefox': {
+                    base: 'BrowserStack',
+                    browser: 'firefox',
+                    os: 'Windows',
+                    os_version: '10'
+                },
+                'BS_Firefox_mac': {
+                    base: 'BrowserStack',
+                    browser: 'firefox',
+                    browser_version: '21.0',
+                    os: 'OS X',
+                    os_version: 'Mountain Lion'
+                },
+                'BS_IE_10': {
+                    base: 'BrowserStack',
+                    browser: 'ie',
+                    browser_version: '10.0',
+                    os: 'Windows',
+                    os_version: '8'
+                },
+                'BS_EDGE': {
+                    base: 'BrowserStack',
+                    browser: 'edge',
+                    os: 'Windows',
+                    os_version: '10'
+                }
+            },
+
             // Start these browsers, currently available:
             // - Chrome
             // - ChromeCanary
@@ -73,8 +121,9 @@ module.exports = function(config){
             // - Safari (only Mac)
             // - PhantomJS
             // - IE (only Windows)
-            browsers: ['Chrome', 'Firefox'],
-    
+            //browsers: ['Chrome', 'Firefox'],
+            browsers: ['BS_Chrome', 'BS_Safari', 'BS_Firefox', 'BS_Firefox_mac', 'BS_IE_10', 'BS_EDGE' ],
+            
             // If browser does not capture in given timeout [ms], kill it
             captureTimeout: 60000,
     
