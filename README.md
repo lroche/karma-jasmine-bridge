@@ -1,6 +1,8 @@
 karma-jasmine-bridge.js
 ========
 
+[![Build Status](https://travis-ci.org/lroche/karma-jasmine-bridge.svg?branch=master)](https://travis-ci.org/lroche/karma-jasmine-bridge)
+
 What is it ?
 -----
 This plugins allows to add support of APIs from Jasmine 1 into a Jasmine 2
