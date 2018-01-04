@@ -93,9 +93,8 @@ module.exports = function(config){
                 'BS_Firefox_mac': {
                     base: 'BrowserStack',
                     browser: 'firefox',
-                    browser_version: '21.0',
                     os: 'OS X',
-                    os_version: 'Mountain Lion'
+                    os_version: 'El Capitan'
                 },
                 'BS_IE_10': {
                     base: 'BrowserStack',
