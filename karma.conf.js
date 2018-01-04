@@ -67,8 +67,7 @@ module.exports = function(config){
     
             // global config of your BrowserStack account
             browserStack: {
-                username: 'lionelroche1',
-                accessKey: 'uDQVs29BdwqdqcssF7ec'
+                
             },
         
             // define browsers
