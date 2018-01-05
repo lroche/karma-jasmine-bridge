@@ -96,12 +96,26 @@ module.exports = function(config){
                     os: 'OS X',
                     os_version: 'El Capitan'
                 },
-                'BS_IE_10': {
+                'BS_IE_10_win7': {
                     base: 'BrowserStack',
                     browser: 'ie',
                     browser_version: '10.0',
                     os: 'Windows',
-                    os_version: '8'
+                    os_version: '7'
+                },
+                'BS_IE_11_win7': {
+                    base: 'BrowserStack',
+                    browser: 'ie',
+                    browser_version: '11.0',
+                    os: 'Windows',
+                    os_version: '7'
+                },
+                'BS_IE_11': {
+                    base: 'BrowserStack',
+                    browser: 'ie',
+                    browser_version: '11.0',
+                    os: 'Windows',
+                    os_version: '10'
                 },
                 'BS_EDGE': {
                     base: 'BrowserStack',
@@ -120,7 +134,9 @@ module.exports = function(config){
             // - PhantomJS
             // - IE (only Windows)
             //browsers: ['Chrome', 'Firefox'],
-            browsers: ['BS_Chrome', 'BS_Safari', 'BS_Firefox', 'BS_Firefox_mac', 'BS_IE_10', 'BS_EDGE' ],
+            browsers: ['BS_Chrome', 'BS_Safari', 'BS_Firefox', 
+                        'BS_Firefox_mac', 'BS_IE_10_win7', 'BS_IE_11_win7',
+                        'BS_IE_11', 'BS_EDGE' ],
             
             // If browser does not capture in given timeout [ms], kill it
             captureTimeout: 60000,
