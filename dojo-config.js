@@ -7,7 +7,8 @@ var dojoConfig = {
     
     cacheBust:new Date(),
     packages:[
-    	{name:"dojo", location:"/base/deps/dojo"}
+        //TODO(lroche): dojo modules are not used here just AMD Loader.
+        /*{name:"dojo", location:"/base/deps/dojo"}*/
     ],
     //updated by karma-dojo-adapter:
     deps: null, 
