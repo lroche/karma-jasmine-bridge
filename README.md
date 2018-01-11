@@ -39,8 +39,8 @@ How to install ?
 
 Adds this in your karma-conf.js
 
-    frameworks: ['jasmine', 'jasmine-bridge'],
+    frameworks: ['jasmine-bridge', 'jasmine'],
 
-the order matters because bridge wraps jasmine features so plugin must be loaded after jasmine.
+the order matters because bridge wraps jasmine features so plugin must be loaded before jasmine.
 Here, of course it's about a jasmine 2 env.
 

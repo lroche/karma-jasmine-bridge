@@ -28,8 +28,8 @@ module.exports = function(config){
             
             
             ],
-            /* order matters : jasmine-bridge included after jasmine */
-            frameworks: ['jasmine', 'jasmine-bridge'],
+            /* order matters : jasmine-bridge included before jasmine */
+            frameworks: ['jasmine-bridge', 'jasmine'],
     
             //	Using star (*) as work-around to force resolution of pluginDirectory during inclusion
             plugins: [
@@ -134,7 +134,7 @@ module.exports = function(config){
             // - PhantomJS
             // - IE (only Windows)
             //browsers: ['Chrome', 'Firefox'],
-            browsers: ['BS_Chrome', 'BS_Safari', 'BS_Firefox', 
+            browsers: ['BS_Chrome', /*'BS_Safari'*/, 'BS_Firefox', 
                         'BS_Firefox_mac', 'BS_IE_10_win7', 'BS_IE_11_win7',
                         'BS_IE_11', 'BS_EDGE' ],
             
