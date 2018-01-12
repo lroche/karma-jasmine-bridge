@@ -17,6 +17,7 @@ List of API supported:
     - spy.andCallFake(function() {});
     - spy.andThrow('error');
     - spy.andReturn(1);
+    - spy.reset() (not supported in this version)
     - spy.mostRecentCall.args (not supported in this version)
     - spy.callCount (not supported in this version)
     - spy.calls[0].args (not supported in this version J2: argsFor(0))
