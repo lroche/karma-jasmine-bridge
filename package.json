@@ -25,6 +25,9 @@
     "url": "https://github.com/lroche/karma-jasmine-bridge/issues"
   },
   "homepage": "https://github.com/lroche/karma-jasmine-bridge",
+  "dependencies": {
+    "proxy-polyfill": "^0.1.7"
+  },
   "devDependencies": {
     "dojo": "^1.11.0",
     "eslint": "^4.13.1",
