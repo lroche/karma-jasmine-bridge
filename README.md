@@ -45,3 +45,12 @@ Adds this in your karma-conf.js
 the order matters because bridge wraps jasmine features so plugin must be loaded before jasmine.
 Here, of course it's about a jasmine 2 env.
 
+Tests
+-----
+![](https://bstacksupport.zendesk.com/attachments/token/tbRCfrBWnXPCzzCEl6txLWWqH/?name=browserstack-logo-600x315.png)
+
+This project is tested with browserstack platform. I choose this platform because automate system is very easy to be configured and result is quick. Thanks to help me to have a complete environnement for testing.
+
+Supported Browsers : IE > 9 , Firefox, Chrome, Safari (see karma-conf to have complete list of platforms.)
+
+
