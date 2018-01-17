@@ -36,7 +36,7 @@ little by little by making a migration on Jasmine 2 API.
 
 How to install ?
 -----
-    npm install lroche/karma-jasmine-bridge
+    npm install karma-jasmine-bridge
 
 Adds this in your karma-conf.js
 
