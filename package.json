@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-bridge",
-  "version": "0.6.1",
+  "version": "0.7.0",
   "description": "A bridge between Jasmine 1 to Jasmine 2 for Karma Env",
   "main": "lib/index.js",
   "scripts": {
@@ -25,6 +25,9 @@
     "url": "https://github.com/lroche/karma-jasmine-bridge/issues"
   },
   "homepage": "https://github.com/lroche/karma-jasmine-bridge",
+  "dependencies": {
+    "proxy-polyfill": "^0.1.7"
+  },
   "devDependencies": {
     "dojo": "^1.11.0",
     "eslint": "^4.13.1",

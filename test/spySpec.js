@@ -41,22 +41,31 @@ define([], function(){
             spy.andReturn(1);
             expect(spy()).toBe(1);
         });
-
-        //TODO: features not supported.
-        /*xit("spy.callCount property should be supported", function(){
+        it("spy.reset() method should be supported", function(){
+            var spy = jasmine.createSpy('spy');
+            spy('foobar')
+            expect(spy.callCount).toBe(1);
+            spy.reset();
+            expect(spy.callCount).toBe(0);
+        });        
+        it("spy.callCount property should be supported", function(){
             var spy = jasmine.createSpy('spy');
             spy.andReturn(1);
             spy();
             expect(spy.callCount).toBe(1);
         });
+        //TODO: features not supported.
+        /*
         xit("spy.mostRecentCall.args should be suppported", function(){
             var spy = jasmine.createSpy('spy');
             spy('foobar')
             expect(spy.mostRecentCall.args).toEqual(['foobar']);
         });
-        xit("spy.calls could be maybe supported", function(){});
-        xit("spy.argsForCall could be maybe supported", function(){});
+        xit("spy.calls should be supported", function(){});
+        xit("spy.argsForCall should be supported", function(){});
         */
+       
+        
 
     })
 })
