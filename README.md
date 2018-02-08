@@ -18,8 +18,8 @@ List of API supported:
     - spy.andThrow('error');
     - spy.andReturn(1);
     - spy.reset()
-    - spy.callCount
-    - spy.mostRecentCall.args (not supported in this version)
+    - spy.callCount 
+    - spy.mostRecentCall.args
     - spy.calls[0].args (not supported in this version J2: argsFor(0))
     - spy.argsForCall[0] (not supported in this version J2: calls.argsFor(0))
 
