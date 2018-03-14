@@ -7,6 +7,10 @@ define([
     describe("In jasmine2 environnement", function(){
         it("it supports async callback with done function", function(done){
             expect(done).toBeDefined();
+        });
+        it("fail() method should be support", function(done){
+            expect(done.fail).toBeDefined();           
+            
         })
     })  
 });
