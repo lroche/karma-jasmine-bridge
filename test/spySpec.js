@@ -1,5 +1,5 @@
 define([], function(){
-    describe("JasmineBridge allows to support almost all Spy legacy APIs:", function(){
+    describe("JasmineBridge allows to support all Spy legacy APIs:", function(){
         
         it("andCallThrough() should be supported", function(){
             var foo = {
@@ -54,18 +54,34 @@ define([], function(){
             spy();
             expect(spy.callCount).toBe(1);
         });
-        //TODO: features not supported.
-        
         it("spy.mostRecentCall.args should be suppported", function(){
             var spy = jasmine.createSpy('spy');
             spy('foobar')
             expect(spy.mostRecentCall.args).toEqual(['foobar']);
         });
-        /*xit("spy.calls should be supported", function(){});
-        xit("spy.argsForCall should be supported", function(){});
-        */
-       
+        it("spy.calls[index].args should be supported", function(){
+            var spy = jasmine.createSpy('spy');
+            spy('foo');
+            spy('bar');
+            expect(spy.calls[0].args).toBeDefined();
+            expect(spy.calls[1].args).toBeDefined();
+            expect(spy.calls[0].args).toEqual(/*jasmine 2 api:*/spy.calls.argsFor(0));
+            expect(spy.calls[5].args).toEqual(/*jasmine 2 api:*/spy.calls.argsFor(5));
+        });
+        it("spy.calls.length should be supported", function(){
+            var spy = jasmine.createSpy('spy');
+            spy('foobar');
+            expect(spy.calls.length).toBe(1);
+        });
+        it("spy.argsForCall should be supported", function(){
+            var spy = jasmine.createSpy('spy');
+            spy('foo');
+            spy('bar');
+            expect(spy.argsForCall[0]).toBeDefined();
+            expect(spy.argsForCall[0][0]).toEqual('foo');
+            expect(spy.argsForCall[1][0]).toEqual('bar');
+        });
         
-
+       
     })
 })
