@@ -12,7 +12,7 @@ List of API supported:
 - runs
 - waitsFor
 - waits
-- Spy API (with limitations):
+- Spy API :
     - spy.andCallThrough();
     - spy.andCallFake(function() {});
     - spy.andThrow('error');
@@ -20,8 +20,8 @@ List of API supported:
     - spy.reset()
     - spy.callCount 
     - spy.mostRecentCall.args
-    - spy.calls[0].args (not supported in this version J2: argsFor(0))
-    - spy.argsForCall[0] (not supported in this version J2: calls.argsFor(0))
+    - spy.calls[0].args 
+    - spy.argsForCall[0] 
 
 Why ?
 -----
