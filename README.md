@@ -21,7 +21,9 @@ List of API supported:
     - spy.callCount 
     - spy.mostRecentCall.args
     - spy.calls[0].args 
-    - spy.argsForCall[0] 
+    - spy.argsForCall[0]
+- Clock API:
+    - useMock
 
 Why ?
 -----
