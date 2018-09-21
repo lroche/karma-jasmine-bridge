@@ -41,9 +41,26 @@ define([], function(){
             //This test allows to check MockClock has correctly deinstalled automaticaly
             checkClockUninstall("MockClock should be desintalled after 'it'");
         });
-        it("Clock Jasmine2 should be supported anymore", function(){
+        it("Clock Jasmine2 should be supported", function(){
             jasmine.clock().install();
             jasmine.clock().uninstall();
+        });
+        describe("Clock Jasmine2", function(){
+            beforeEach(function(){
+                jasmine.clock().install();
+            });
+            it("should be supported", function(){
+                var ticked = false;
+                setTimeout(function() {
+                    ticked = true;
+                }, 10000);
+                expect(ticked).toBe(false);
+                jasmine.Clock.tick(10001);
+                expect(ticked).toBe(true);
+            });
+            afterEach(function(){
+                jasmine.clock().uninstall();
+            });
         });
         it("Clock.useMock() should be ok in 'it' method", function(){
             jasmine.Clock.useMock();
