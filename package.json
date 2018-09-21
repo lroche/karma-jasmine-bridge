@@ -1,6 +1,6 @@
 {
   "name": "karma-jasmine-bridge",
-  "version": "0.8.0",
+  "version": "0.9.0",
   "description": "A bridge between Jasmine 1 to Jasmine 2 for Karma Env",
   "main": "lib/index.js",
   "scripts": {
