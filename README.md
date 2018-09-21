@@ -23,7 +23,8 @@ List of API supported:
     - spy.calls[0].args 
     - spy.argsForCall[0]
 - Clock API:
-    - useMock
+    - useMock()
+
 
 Why ?
 -----
