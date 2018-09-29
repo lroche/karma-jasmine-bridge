@@ -1,5 +1,5 @@
 define([], function(){
-    describe("JasmineBridge allows to support Clock Jasmine 1 APIs:", function(){
+    describe("JasmineBridge adds support about Clock Jasmine 1 APIs:", function(){
         it("jasmine.Clock should be defined", function(){
             
             expect(jasmine.Clock).toBeDefined();
@@ -9,20 +9,24 @@ define([], function(){
                
                 jasmine.Clock.useMock();    
             });
-            it(".useMock() should be supported", function(){
-                var ticked = false;
+            it(".useMock() and tick() should be supported", function(){
+                var ticked = false; //
                 setTimeout(function() {
                     ticked = true;
-                }, 10000);
+                }, 1000);
+                
+                jasmine.Clock.tick(100);
                 expect(ticked).toBe(false);
-                jasmine.Clock.tick(10001);
+                jasmine.Clock.tick(901);
                 expect(ticked).toBe(true);
             });
             it("should be supported with Jasmine 2 done method", function(done){
                 var ticked = false;
                 setTimeout(function() {
+                    ticked = true;
                     done();
                 }, 10000);
+                jasmine.Clock.tick(500);
                 expect(ticked).toBe(false);
                 jasmine.Clock.tick(10001);
             });
@@ -35,13 +39,31 @@ define([], function(){
                 //Just in case we verify done() method has been called once
                 expect(nbExec).toBe(1);
             });
+            it("should be supported in Async Spec", function(done){
+                var ticked = false;
+                setTimeout(function(){
+                    setTimeout(function(){
+                        ticked = true;      
+                    }, 100);
+                    expect(ticked).toBe(false);
+                    setTimeout(function(){
+                        expect(ticked).toBe(true);
+                        done();
+                    }, 100);
+                }, 100);
+                
+                jasmine.Clock.tick(5);
+                expect(ticked).toBe(false); 
+                //Launches each scheduledFunction
+                jasmine.Clock.tick(1000);    
+            });
 
         });
         it("jasmine Clock.tick() should have needed a installed MockClock", function(){
-            //This test allows to check MockClock has correctly deinstalled automaticaly
-            checkClockUninstall("MockClock should be desintalled after 'it'");
+            //This test allows to check MockClock has been correctly desinstalled automaticaly
+            checkClockUninstall("MockClock should be desinstalled after 'it'");
         });
-        it("Clock Jasmine2 should be supported", function(){
+        it("Clock Jasmine2 should be installable/desinstallable in 'it'", function(){
             jasmine.clock().install();
             jasmine.clock().uninstall();
         });
@@ -49,17 +71,29 @@ define([], function(){
             beforeEach(function(){
                 jasmine.clock().install();
             });
+            afterEach(function(){
+                jasmine.clock().uninstall();
+            });
             it("should be supported", function(){
                 var ticked = false;
                 setTimeout(function() {
                     ticked = true;
-                }, 10000);
+                }, 100);
                 expect(ticked).toBe(false);
-                jasmine.Clock.tick(10001);
+                jasmine.clock().tick(1);
+                expect(ticked).toBe(false);
+                jasmine.clock().tick(101);
                 expect(ticked).toBe(true);
             });
-            afterEach(function(){
-                jasmine.clock().uninstall();
+            it("should be supported in Async Spec", function(done){
+                //In fact, Spec is synchronous.
+                setTimeout(function(){
+                    setTimeout(function(){
+                        done();
+                    }, 100);
+                    jasmine.clock().tick(200);
+                }, 100);
+                jasmine.clock().tick(150);
             });
         });
         it("Clock.useMock() should be ok in 'it' method", function(){

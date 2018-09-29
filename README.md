@@ -24,6 +24,7 @@ List of API supported:
     - spy.argsForCall[0]
 - Clock API:
     - useMock()
+    - tick()
 
 
 Why ?
