@@ -59,7 +59,7 @@ define([], function(){
             });
 
         });
-        it("jasmine Clock.tick() should have needed a installed MockClock", function(){
+        it("jasmine Clock should have been uninstalled", function(){
             //This test allows to check MockClock has been correctly desinstalled automaticaly
             checkClockUninstall("MockClock should be desinstalled after 'it'");
         });
@@ -107,8 +107,28 @@ define([], function(){
             expect(ticked).toBe(true);
             //MockClock is desinstalled by JasmineBridge.
         });
-        it("jasmine Clock.tick() should have needed a installed MockClock(2)", function(){
-            checkClockUninstall("MockClock should be desintalled after 'it' (2)");
+        it("jasmine Clock should have been uninstalled(2)", function(){
+            checkClockUninstall("MockClock should be desinstalled after 'it' (2)");
+        });
+        it("Clock.useMock() should be ok in asynchronous spec and correctly uninstalled", function(done){
+            var ticked = false;
+            setTimeout(function(){
+                jasmine.Clock.useMock();
+                
+                setTimeout(function() {
+                    ticked = true;
+                }, 10000);
+                jasmine.Clock.tick(500);
+                expect(ticked).toBe(false);
+                jasmine.Clock.tick(10001);
+                expect(ticked).toBe(true);
+                done();
+            }, 100)
+            
+            //MockClock should be desinstalled by JasmineBridge.
+        });
+        it("jasmine Clock should have been uninstalled(3)", function(){
+            checkClockUninstall("MockClock should be desintalled after 'it' (3)");
         });
         function checkClockUninstall(message){
             try {

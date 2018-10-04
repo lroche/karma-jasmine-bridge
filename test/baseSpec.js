@@ -36,6 +36,18 @@ define([], function(){
             waitsFor(function(){
                 return this.value === 1;
             }, "not ok", 100);
-        })
+        });
+        it("done function but NOT runs/waits/waitsFor methods in same time", function(done){
+            var called = false;
+            runs(function(){
+                called = true;
+            });
+           
+            setTimeout(function(){
+                expect(called).toBe(false);
+                done();
+            }, 100);
+            
+        });
     })
 })
