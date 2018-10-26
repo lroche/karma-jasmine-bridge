@@ -39,5 +39,49 @@ define([
                 expect(isInit).toBe(true);
             });
         });
+        if(hasPromise()){
+            describe("beforeEach/AfterEach should support Promise", function(){
+                function newPromise(){
+                    return new Promise(function(resolve){
+                        setTimeout(resolve, 1);
+                    });
+                };
+                var promiseOk;
+                beforeEach(function(){
+                    this.runsCalled = false;
+                    runs(function(){
+                        this.runsCalled = true;//should not happens
+                    });
+                    return newPromise().then(function(){
+                        promiseOk = true;
+                    });
+                });
+                afterEach(function(){
+                    return newPromise();
+                })
+                it("and 'it' function", function(){
+                    //runs API is not supported when Spec is promise-like
+                    expect(this.runsCalled).toBe(false);
+                    return newPromise();
+                });
+                it(" and 'it' should support still runs/waitsFor", function(){
+                    var isOk;
+                    runs(function(){
+                        newPromise().then(function(){
+                            isOk = true;
+                        }); 
+                    });
+                    waitsFor(function(){
+                        return isOk === true;
+                    }, "not ok", 100);
+                    runs(function(){
+                        expect(promiseOk).toBe(true);
+                    });
+                });
+            });
+        }
+        function hasPromise() {
+            return typeof Promise !== 'undefined';
+        }
     })  
 });
