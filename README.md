@@ -25,6 +25,7 @@ List of API supported:
 - Clock API:
     - useMock()
     - tick()
+- CustomMatcher API
 
 
 Why ?
