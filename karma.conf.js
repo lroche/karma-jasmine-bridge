@@ -75,6 +75,12 @@ module.exports = function(config){
                 'BS_Chrome': {
                     base: 'BrowserStack',
                     browser: 'chrome',
+                    os: 'Windows',
+                    os_version: '10'
+                },
+                'BS_Chrome_mac': {
+                    base: 'BrowserStack',
+                    browser: 'chrome',
                     os: 'OS X',
                     os_version: 'Sierra'
                 },
@@ -87,6 +93,7 @@ module.exports = function(config){
                 'BS_Firefox': {
                     base: 'BrowserStack',
                     browser: 'firefox',
+                    version: '64',
                     os: 'Windows',
                     os_version: '10'
                 },
@@ -134,7 +141,7 @@ module.exports = function(config){
             // - PhantomJS
             // - IE (only Windows)
             //browsers: ['Chrome', 'Firefox'],
-            browsers: ['BS_Chrome', /*'BS_Safari'*/, 'BS_Firefox', 
+            browsers: ['BS_Chrome', 'BS_Chrome_mac', /*'BS_Safari'*/ 'BS_Firefox', 
                         'BS_Firefox_mac', 'BS_IE_10_win7', 'BS_IE_11_win7',
                         'BS_IE_11', 'BS_EDGE' ],
             
