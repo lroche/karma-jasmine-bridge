@@ -1,1 +1,21 @@
-{"extends": "strongloop"}
+{
+    "extends": [
+        "eslint:recommended"
+    ],
+    "rules" : {
+        "indent": "off",
+        "no-unused-vars": "warn",
+        "no-console": 0
+    },
+    "env": {
+        "browser": true,
+        "node" : true,
+        "jasmine": true,
+        "amd": true
+    },
+    "globals": {
+        "Proxy": true,
+        "Promise": true,
+        "JasmineBridge": true
+    }
+}

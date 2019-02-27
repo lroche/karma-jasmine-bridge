@@ -4,6 +4,7 @@
   "description": "A bridge between Jasmine 1 to Jasmine 2 for Karma Env",
   "main": "lib/index.js",
   "scripts": {
+    "lint": "./node_modules/.bin/eslint .",
     "test": "karma start --single-run",
     "testdev": "karma start --single-run=false --browsers Firefox,Chrome",
     "testdev-ie": "karma start --single-run=false --browsers Firefox,Chrome,IE"
@@ -30,8 +31,7 @@
   },
   "devDependencies": {
     "dojo": "^1.11.0",
-    "eslint": "^4.13.1",
-    "eslint-config-strongloop": "^2.1.0",
+    "eslint": "^5.13.0",
     "jasmine-core": "^2.8.0",
     "karma": "^1.7.1",
     "karma-browserstack-launcher": "^1.3.0",
