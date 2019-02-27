@@ -14,7 +14,7 @@ define([], function(){
             
         });
         it("andCallFake() should be supported", function(){
-            var spy = jasmine.createSpy('spy');
+            var spy = jasmine.createSpy('spy'),
                 fn =function(value){ return value;};
             spy.andCallFake(fn);
             spy('foo');
