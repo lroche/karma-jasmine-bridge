@@ -27,7 +27,7 @@
   },
   "homepage": "https://github.com/lroche/karma-jasmine-bridge",
   "dependencies": {
-    "proxy-polyfill": "^0.1.7"
+    "proxy-polyfill": "^0.3.0"
   },
   "devDependencies": {
     "dojo": "^1.11.0",
