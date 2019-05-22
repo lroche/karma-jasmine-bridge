@@ -30,15 +30,7 @@ define([], function(){
                 expect(ticked).toBe(false);
                 jasmine.Clock.tick(10001);
             });
-            var nbExec = 0;
-            it(".useMock() should be supported with Jasmine 2 done method(2)", function(){
-                expect(true).toBe(true);
-                nbExec++;
-            });
-            it(".useMock() should be supported with Jasmine 2 done method(3)", function(){
-                //Just in case we verify done() method has been called once
-                expect(nbExec).toBe(1);
-            });
+            
             it("should be supported in Async Spec", function(done){
                 var ticked = false;
                 setTimeout(function(){

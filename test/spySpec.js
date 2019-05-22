@@ -5,7 +5,7 @@ define([], function(){
             var foo = {
                 not: function(bool) { return !bool; }
             }
-            
+
             spyOn(foo, 'not').andCallThrough();
             
             foo.not(42 == 42);

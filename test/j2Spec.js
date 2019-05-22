@@ -6,24 +6,22 @@ define([
     //Goal : check if any feature of Jasmine 2 is not broken  
     describe("In jasmine2 environnement", function(){
         describe("done method", function(){
-            var ok;
-            it("should be supported to declare an asynchronous spec", function(done){
+            it("should be supported to declare an asynchronous spec", function(done){ 
                 expect(done).toBeDefined();
                 setTimeout(function(){
-                    ok = true;
                     done();
                 },100);
-                ok = false;
             });
             it("fail() method should be supported", function(done){
-                
                 expect(done.fail).toBeDefined();           
-                if(!ok){
-                    done.fail("done should create correcty an asynchronous spec");
-                }
                 done();
             })
             
+        });
+        describe('version() is available', function(){
+            it('jasmineRequire.version() should return something', function(){
+                expect(parseInt(jasmine.version.split('.')[0])).toBe(3);
+            });
         });
         describe("beforeEach/afterEach", function(){
             var isInit;
