@@ -5,7 +5,7 @@ karma-jasmine-bridge.js
 
 What is it ?
 -----
-This plugins allows to add support of APIs from Jasmine 1 into a Jasmine 2
+This plugins allows to add support of APIs from Jasmine 1 into Jasmine 2 and Jasmine 3
 environment.
 
 List of API supported:
@@ -48,7 +48,7 @@ Adds this in your karma-conf.js
     frameworks: ['jasmine-bridge', 'jasmine'],
 
 the order matters because bridge wraps jasmine features so plugin must be loaded before jasmine.
-Here, of course it's about a jasmine 2 env.
+Here, of course it's about a jasmine 2 or 3 env.
 
 Tests
 -----
