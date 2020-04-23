@@ -52,7 +52,7 @@ Here, of course it's about a jasmine 2 or 3 env.
 
 Tests
 -----
-![](https://bstacksupport.zendesk.com/attachments/token/tbRCfrBWnXPCzzCEl6txLWWqH/?name=browserstack-logo-600x315.png)
+<a href="https://www.browserstack.com" target="_blank"><img src="https://www.browserstack.com/images/layout/logo.svg"></a>
 
 This project is tested with browserstack platform. I choose this platform because automate system is very easy to be configured and result is quick. Thanks to help me to have a complete environnement.
 
